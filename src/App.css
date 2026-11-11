@@ -1,0 +1,305 @@
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: #171717;
+  color: #f5f1e9;
+  font-family: Arial, sans-serif;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 25px 8%;
+  gap: 20px;
+}
+
+.navbar h2 {
+  color: #d7a15c;
+}
+
+.nav-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 25px;
+}
+
+.nav-links a,
+.section a {
+  color: #f5f1e9;
+  text-decoration: none;
+}
+
+.nav-links a:hover,
+.section a:hover {
+  color: #d7a15c;
+}
+
+.hero {
+  min-height: 85vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 80px 10%;
+}
+
+.subtitle {
+  color: #d7a15c;
+  letter-spacing: 3px;
+}
+
+.hero h1 {
+  font-size: clamp(3rem, 7vw, 7rem);
+  line-height: 1.1;
+  margin: 25px 0;
+}
+
+.hero h1 span {
+  color: #d7a15c;
+}
+
+.description {
+  max-width: 550px;
+  font-size: 18px;
+  line-height: 1.8;
+  color: #c5c5c5;
+}
+
+.hero-button {
+  display: inline-block;
+  align-self: flex-start;
+  margin-top: 30px;
+  padding: 16px 30px;
+  background: #d7a15c;
+  color: #171717;
+  text-decoration: none;
+  border-radius: 30px;
+  font-weight: bold;
+}
+
+.section {
+  padding: 100px 10%;
+  border-top: 1px solid #333;
+}
+
+.section h2 {
+  font-size: clamp(2rem, 5vw, 3rem);
+  color: #d7a15c;
+}
+
+.section p {
+  max-width: 700px;
+  font-size: 18px;
+  line-height: 1.8;
+}
+
+footer {
+  text-align: center;
+  padding: 30px;
+  color: #999;
+}
+
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .nav-links {
+    gap: 15px;
+  }
+
+  .hero {
+    padding: 70px 7%;
+  }
+
+  .section {
+    padding: 70px 7%;
+  }
+}/* =========================
+   CINEMATIC HERO SECTION
+========================= */
+
+.hero {
+  display: grid;
+  grid-template-columns: minmax(0, 1.2fr) minmax(280px, 0.8fr);
+  align-items: center;
+  gap: 60px;
+  min-height: 90vh;
+  padding: 80px 8%;
+  position: relative;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  min-width: 0;
+}
+
+.hero-content h1 {
+  font-size: clamp(2.5rem, 5vw, 5.7rem);
+  font-weight: 800;
+  line-height: 1.1;
+  letter-spacing: -2px;
+  margin: 25px 0;
+}
+
+.hero-content h1 span {
+  color: #d7a15c;
+}
+
+.hero-tagline {
+  font-size: 22px;
+  font-weight: 400;
+  margin-bottom: 20px;
+  color: #f5f1e9;
+}
+
+.hero-content .description {
+  color: #bfbfbf;
+  max-width: 560px;
+  line-height: 1.9;
+  font-size: 16px;
+}
+
+/* HERO BUTTONS */
+
+.hero-buttons {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 20px;
+  margin-top: 30px;
+}
+
+.hero-buttons .hero-button {
+  margin-top: 0;
+}
+
+.hero-button {
+  transition: all 0.3s ease;
+}
+
+.hero-button:hover {
+  background: #f5f1e9;
+  transform: translateY(-4px);
+}
+
+.secondary-button {
+  color: #f5f1e9;
+  border: 1px solid #d7a15c;
+  padding: 15px 28px;
+  border-radius: 30px;
+  transition: all 0.3s ease;
+}
+
+.secondary-button:hover {
+  background: #d7a15c;
+  color: #171717;
+}
+
+/* PERSONAL PHOTOGRAPH */
+
+.hero-image-container {
+  position: relative;
+  width: 100%;
+  max-width: 450px;
+  justify-self: center;
+}
+
+.hero-image-frame {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  overflow: hidden;
+  border-radius: 220px 220px 20px 20px;
+  border: 2px solid #d7a15c;
+  box-shadow: 0 25px 70px rgba(0, 0, 0, 0.45);
+}
+
+.hero-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  transition: transform 0.6s ease;
+}
+
+.hero-image-frame:hover .hero-image {
+  transform: scale(1.06);
+}
+
+/* PHOTO CAPTION */
+
+.image-caption {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  margin-top: 18px;
+  color: #d7a15c;
+  font-size: 10px;
+  letter-spacing: 2px;
+}
+
+/* RESPONSIVE DESIGN */
+
+@media (max-width: 900px) {
+
+  .hero {
+    grid-template-columns: 1fr;
+    gap: 45px;
+    padding: 70px 7%;
+    text-align: center;
+  }
+
+  .hero-content h1 {
+    font-size: clamp(2.5rem, 8vw, 5rem);
+  }
+
+  .hero-content .description {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .hero-buttons {
+    justify-content: center;
+  }
+
+  .hero-image-container {
+    max-width: 380px;
+  }
+
+}
+
+@media (max-width: 480px) {
+
+  .hero-content h1 {
+    font-size: 42px;
+  }
+
+  .hero-tagline {
+    font-size: 18px;
+  }
+
+  .subtitle {
+    font-size: 11px;
+    letter-spacing: 2px;
+  }
+
+  .hero-buttons {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .hero-image-container {
+    max-width: 300px;
+  }
+
+}
